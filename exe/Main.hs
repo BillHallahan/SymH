@@ -24,12 +24,15 @@ main = do
 
     -- putStrLn "infiniteReturnNoTerm"
     -- print =<< infiniteReturnNoTerm
-    
-    putStrLn "errorTest20"
-    print =<< errorTest20
 
-    putStrLn "errorTest10"
-    print =<< errorTest10
+    -- putStrLn "errorTest20"
+    -- print =<< errorTest20
+
+    -- putStrLn "errorTest10"
+    -- print =<< errorTest10
+
+    -- putStrLn "recPred"
+    -- print =<< recPred
 
     -- putStrLn "justNonTermTest"
     -- print =<< justNonTermTest
