@@ -3,6 +3,9 @@ module Main where
 import Infinite.Infinite
 import Infinite.InfList
 
+import Arithmetics.Arithmetics
+import Arithmetics.Interpreter
+
 import SymH.SymH
 
 main :: IO ()
@@ -39,5 +42,9 @@ main = do
 
     -- putStrLn "nothingNonTermTest"
     -- print =<< nothingNonTermTest
+
+    putStrLn "equals12Test"
+    print =<< equals12Test
+
     return ()
 
