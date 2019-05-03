@@ -1,6 +1,7 @@
 module Main where
 
 import Infinite.Infinite
+import Infinite.InfList
 
 import SymH.SymH
 
@@ -20,6 +21,15 @@ main = do
 
     putStrLn "infiniteReturn"
     print =<< infiniteReturn
+
+    putStrLn "infiniteReturnNoTerm"
+    print =<< infiniteReturnNoTerm
+    
+    putStrLn "errorTest20"
+    print =<< errorTest20
+
+    putStrLn "errorTest10"
+    print =<< errorTest10
 
     -- putStrLn "justNonTermTest"
     -- print =<< justNonTermTest
