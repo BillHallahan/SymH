@@ -22,8 +22,8 @@ main = do
     putStrLn "infiniteReturn"
     print =<< infiniteReturn
 
-    putStrLn "infiniteReturnNoTerm"
-    print =<< infiniteReturnNoTerm
+    -- putStrLn "infiniteReturnNoTerm"
+    -- print =<< infiniteReturnNoTerm
     
     putStrLn "errorTest20"
     print =<< errorTest20
