@@ -30,6 +30,7 @@ main = do
     putStrLn "infiniteReturn"
     print =<< infiniteReturn
 
+---------
     -- putStrLn "infiniteReturnNoTerm"
     -- print =<< infiniteReturnNoTerm
 
@@ -47,6 +48,7 @@ main = do
 
     -- putStrLn "nothingNonTermTest"
     -- print =<< nothingNonTermTest
+------------
 
     putStrLn "equals12Test"
     print =<< equals12Test
