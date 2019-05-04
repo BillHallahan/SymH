@@ -6,10 +6,15 @@ import Infinite.InfList
 import Arithmetics.Arithmetics
 import Arithmetics.Interpreter
 
+import SumToN
+
 import SymH.SymH
 
 main :: IO ()
 main = do
+    putStrLn "sumToN"
+    print =<< sumToN 0 [-5, 10, -15, 20, 25]
+
     putStrLn "nothingTest"
     print =<< nothingTest
 

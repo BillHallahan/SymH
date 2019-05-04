@@ -33,6 +33,4 @@ eval (Cond cond true false) = case eval cond of
   (B True) -> eval true
   (B False) -> eval false
   otherwise -> error $ "eval: Cond: " ++ show otherwise
-
-
-
+eval e = e
