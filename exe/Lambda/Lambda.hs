@@ -18,3 +18,9 @@ lambdaTest2 = [g2| \(x :: Int ) -> ?(symExpr :: Expr) |
       let expr = symExpr in
         eval env expr == (Const (I 43)) |] 0
 
+lambdaTest3 :: IO (Maybe Expr)
+lambdaTest3 = [g2| \(x :: Int) -> ?(symExpr :: Expr) |
+      let env = [] in
+      let expr = App symExpr (Const (I 27)) in
+        eval env expr == (Const (I 27)) |] 0
+
