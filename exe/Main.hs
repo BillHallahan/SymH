@@ -77,11 +77,14 @@ main = do
     -- putStrLn "queensTest4"
     -- print =<< queensTest4
 
-    putStrLn "lambdaTest1"
-    print =<< lambdaTest1
+    -- putStrLn "lambdaTest1"
+    -- print =<< lambdaTest1
 
     putStrLn "lambdaTest3"
     print =<< lambdaTest3
+
+    -- putStrLn "lambdaTest4"
+    -- print =<< lambdaTest4 [(1, 1), (2, 2)]
 
 
     return ()
