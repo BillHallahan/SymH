@@ -8,29 +8,41 @@ module Arithmetics.Interpreter where
 import SymH.SymH
 import Data.Data
 
+type Ident = String
 
 data Expr
   = I Int
-  | B Bool
+  | Var Ident
   | Add Expr Expr
   | Mul Expr Expr
-  | Eq Expr Expr
-  | Cond Expr Expr Expr
+  | Assign Ident Expr
+  | Seq Expr Expr
   deriving (Eq, Show, Data)
 
 $(derivingG2Rep ''Expr)
 
+type Env = [(Ident, Int)]
 
-eval :: Expr -> Expr
-eval (Add e1 e2) = case (eval e1, eval e2) of
-    (I i1, I i2) -> I (i1 + i2)
-    otherwise -> error $ "eval: Add: " ++ show otherwise
-eval (Mul e1 e2) = case (eval e1, eval e2) of
-    (I i1, I i2) -> I (i1 * i2)
-    otherwise -> error $ "eval: Mul " ++ show otherwise
-eval (Eq e1 e2) = B (eval e1 == eval e2)
-eval (Cond cond true false) = case eval cond of
-  (B True) -> eval true
-  (B False) -> eval false
-  otherwise -> error $ "eval: Cond: " ++ show otherwise
-eval e = e
+eval :: Env -> Expr -> (Env, Int)
+eval env (I int) = (env, int)
+eval env (Var ident) =
+  case lookup ident env of
+    Just v -> (env, v)
+    _ -> (env, 0)
+    -- _ -> error $ "eval: " ++ show (env, ident)
+eval env (Add expr1 expr2) =
+  let lhs = snd $ eval env expr1
+      rhs = snd $ eval env expr2
+  in (env, lhs + rhs)
+eval env (Mul expr1 expr2) =
+  let lhs = snd $ eval env expr1
+      rhs = snd $ eval env expr2
+  in (env, lhs * rhs)
+eval env (Assign ident rhs) =
+  let res = snd $ eval env rhs
+  in ((ident, res) : env, res)
+eval env (Seq expr1 expr2) =
+  let env2 = fst $ eval env expr1
+  in eval env2 expr2
+
+

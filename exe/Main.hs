@@ -61,8 +61,8 @@ main = do
     -- print =<< nothingNonTermTest
 ------------
 
-    putStrLn "equals12Test"
-    print =<< equals12Test
+    -- putStrLn "equals12Test"
+    -- print =<< equals12Test
 
     -- putStrLn "Imperative"
     -- putStrLn $ show $ Imp.eval (fst prog1) (snd prog1)
@@ -78,14 +78,21 @@ main = do
     -- putStrLn "lambdaTest1"
     -- print =<< lambdaTest1
 
-    putStrLn "lambdaTest3"
-    print =<< lambdaTest3
+    -- putStrLn "lambdaTest1"
+    -- print =<< lambdaTest1
+
+    -- putStrLn "lambdaTest5"
+    -- print =<< lambdaTest5
 
     -- putStrLn "lambdaTest4"
     -- print =<< lambdaTest4 [(1, 1), (2, 2)]
 
-    putStrLn "queensTest4"
-    print =<< queensTestN 4
+    -- putStrLn "queensTest8"
+    -- print =<< queensTestN 8
+
+    putStrLn "triplesTo30"
+    print =<< triplesTo30
+
 
     return ()
 
