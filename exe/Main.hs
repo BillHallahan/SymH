@@ -74,8 +74,6 @@ main = do
     -- putStrLn "imperativeTest2"
     -- print =<< imperativeTest2
 
-    -- putStrLn "queensTest4"
-    -- print =<< queensTest4
 
     -- putStrLn "lambdaTest1"
     -- print =<< lambdaTest1
@@ -86,6 +84,8 @@ main = do
     -- putStrLn "lambdaTest4"
     -- print =<< lambdaTest4 [(1, 1), (2, 2)]
 
+    putStrLn "queensTest4"
+    print =<< queensTestN 4
 
     return ()
 

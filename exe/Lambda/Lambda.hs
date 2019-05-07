@@ -39,5 +39,12 @@ lambdaTest4 pairs = [g2| \(xs :: [(Int, Int)]) -> ?(symExpr :: Expr) |
       let env = [] in
         all (\(i, o) -> eval env (App symExpr (Const (I i))) == Const (I o)) xs |] pairs
 
+lambdaTest5 :: IO (Maybe Expr)
+lambdaTest5 = [g2| \(x :: Int) -> ?(symExpr :: Expr) |
+      let env = [] in
+      let expr1 = App (App symExpr (Const (I 4))) (Const (I 6)) in
+      let expr2 = App (App symExpr (Const (I 5))) (Const (I 6)) in
+        eval env expr1 == Const (I 4)
+        && eval env expr2 == Const (I 5) |] (0 :: Int)
 
 
